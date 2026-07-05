@@ -22,8 +22,13 @@ export function About() {
           <div className="space-y-6">
             {/* Profile Image Card */}
             <Card className="overflow-hidden p-0">
-              <div className="relative h-[380px] w-full">
-                <Image src={siteConfig.profileImage} alt="Profile" fill sizes="100%" className="object-cover" />
+              <div className="relative h-[420px] w-full">
+                <Image
+                  src={siteConfig.profileImage2}
+                  alt="Profile"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
             </Card>
 

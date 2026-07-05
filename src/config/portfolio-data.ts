@@ -11,6 +11,7 @@ export const siteConfig: SiteConfig = {
   ogImage: '/images/og.png',
 
   profileImage: '/profile.jpg',
+  profileImage2: '/profile2.png',
   resume: '/alamin-ahmed-resume.pdf',
 
   location: 'Sherpur, Mymensingh, Bangladesh',
@@ -141,12 +142,13 @@ export const projectsList: readonly Project[] = [
 
     featured: true,
 
-    thumbnail: '/images/projects/project1.png',
+    thumbnail: '/images/projects/launch1.png',
 
     gallery: [
-      '/images/projects/project1.png',
-      '/images/projects/project2.png',
-      '/images/projects/project3.png',
+      '/images/projects/launch2.png',
+      '/images/projects/launch3.png',
+      '/images/projects/launch4.png',
+      '/images/projects/launch5.png',
     ],
 
     techStack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'TailwindCSS'],
@@ -203,12 +205,13 @@ export const projectsList: readonly Project[] = [
 
   featured: true,
 
-  thumbnail: '/images/projects/project4.png',
+  thumbnail: '/images/projects/leadpulse1.png',
 
   gallery: [
-    '/images/projects/project1.png',
-    '/images/projects/project2.png',
-    '/images/projects/project3.png',
+    '/images/projects/leadpulse2.png',
+    '/images/projects/leadpulse3.png',
+    '/images/projects/leadpulse4.png',
+    '/images/projects/leadpulse5.png',
   ],
 
   techStack: [
@@ -295,12 +298,13 @@ export const projectsList: readonly Project[] = [
 
   featured: true,
 
-  thumbnail: '/images/projects/project2.png',
+  thumbnail: '/images/projects/resuai1.png',
 
   gallery: [
-    '/images/projects/project1.png',
-    '/images/projects/project2.png',
-    '/images/projects/project3.png',
+    '/images/projects/resuai2.png',
+    '/images/projects/resuai3.png',
+    '/images/projects/resuai4.png',
+    '/images/projects/resuai5.png',
   ],
 
   techStack: [
@@ -386,12 +390,13 @@ export const projectsList: readonly Project[] = [
 
   featured: false,
 
-  thumbnail: '/images/projects/project3.png',
+  thumbnail: '/images/projects/ecospark1.png',
 
   gallery: [
-    '/images/projects/project1.png',
-    '/images/projects/project2.png',
-    '/images/projects/project3.png',
+    '/images/projects/ecospark2.png',
+    '/images/projects/ecospark3.png',
+    '/images/projects/ecospark4.png',
+    '/images/projects/ecospark5.png',
   ],
 
   techStack: [

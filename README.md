@@ -396,19 +396,19 @@ I enjoy working with:
 
 ### 🌐 Portfolio
 
-https://YOUR_DOMAIN.vercel.app
+https://my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app/#hero
 
 ### GitHub
 
-https://github.com/YOUR_USERNAME
+https://github.com/Alaminahmedariyan
 
 ### LinkedIn
 
-https://linkedin.com/in/YOUR_USERNAME
+https://www.linkedin.com/in/alamin-ahmed-536463382
 
 ### Email
 
-YOUR_EMAIL@gmail.com
+alaminahmedariyan2022@gmail.com
 
 ---
 

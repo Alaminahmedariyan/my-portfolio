@@ -106,6 +106,7 @@ export interface SiteConfig {
   readonly ogImage: string;
 
   readonly profileImage: string;
+  readonly profileImage2: string;
   readonly resume: string;
 
   readonly location: string;
