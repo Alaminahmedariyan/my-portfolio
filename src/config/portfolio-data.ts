@@ -482,7 +482,7 @@ export const projectsList: readonly Project[] = [
 
   featured: false,
 
-  thumbnail: '/images/projects/project2.png',
+  thumbnail: '/images/projects/ratemytutor1.png',
 
   gallery: [
     '/images/projects/project1.png',
@@ -573,7 +573,7 @@ export const projectsList: readonly Project[] = [
 
   featured: false,
 
-  thumbnail: '/images/projects/project4.png',
+  thumbnail: '/images/projects/invoicesync1.png',
 
   gallery: [
     '/images/projects/project1.png',
