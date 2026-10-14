@@ -19,7 +19,7 @@ export const siteConfig: SiteConfig = {
 
   links: {
     github: 'https://github.com/Alaminahmedariyan',
-    linkedin: 'https://www.linkedin.com/in/alamin-ahmed-536463382',
+    linkedin: 'https://www.linkedin.com/in/alamin-ahmed-dev',
     email: 'alaminahmedariyan2022@gmail.com',
   },
 
