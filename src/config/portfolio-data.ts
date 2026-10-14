@@ -191,9 +191,6 @@ export const projectsList: readonly Project[] = [
 
     gallery: [
       '/images/projects/evalora2.png',
-      '/images/projects/evalora3.png',
-      '/images/projects/evalora4.png',
-      '/images/projects/evalora5.png',
     ],
 
     techStack: [
