@@ -2,20 +2,20 @@
 
 import * as React from 'react';
 import Link from 'next/link';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+
 import { buttonVariants } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/shared/ThemeToggle';
-import { Container } from '@/components/shared/Container';
 import { siteConfig } from '@/config/portfolio-data';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { name: 'About', href: '/#about' },
-  { name: 'Skills', href: '/#skills' },
-  { name: 'Education', href: '/#education' },
-  { name: 'Experience', href: '/#experience' },
-  { name: 'Projects', href: '/#projects' },
-  { name: 'Contact', href: '/#contact' },
+  { name: 'About', id: 'about' },
+  { name: 'Skills', id: 'skills' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'Education', id: 'education' },
+  { name: 'Experience', id: 'experience' },
+  { name: 'Contact', id: 'contact' },
 ];
 
 export function Navbar() {
@@ -25,127 +25,77 @@ export function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 24);
 
-      // Active section detection
-      const sections = document.querySelectorAll('section[id]');
-      sections.forEach((section) => {
+      let current = '';
+      document.querySelectorAll<HTMLElement>('section[id]').forEach((section) => {
         const rect = section.getBoundingClientRect();
-        if (rect.top <= 100 && rect.bottom >= 100) {
-          setActiveSection(section.id);
-        }
+        if (rect.top <= 140 && rect.bottom >= 140) current = section.id;
       });
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-300',
-        isScrolled
-          ? 'bg-background/95 border-border/5 border-b shadow-sm backdrop-blur-xl'
-          : 'bg-background/80 backdrop-blur-lg',
-      )}
-    >
-      <Container>
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo / Brand Name */}
-          <Link
-            href="/#hero"
-            className="text-foreground text-sm font-medium tracking-tight transition-opacity hover:opacity-80"
-          >
-            {siteConfig.name}
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden items-center space-x-1 md:flex">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  'text-muted-foreground hover:text-foreground relative px-3 py-2 text-xs font-medium transition-all',
-                  activeSection === item.href.substring(1) && 'text-foreground',
-                )}
-              >
-                {item.name}
-                {activeSection === item.href.substring(1) && (
-                  <span className="bg-primary absolute bottom-0 left-1/2 h-0.5 w-4 -translate-x-1/2 rounded-full" />
-                )}
-              </a>
-            ))}
-          </nav>
-
-          {/* Right Side Options (Theme Toggle & Action Button) */}
-          <div className="hidden items-center space-x-3 md:flex">
-            <ThemeToggle />
-            <a
-              href="/alamin-ahmed-resume.pdf"
-              download
-              className={cn(
-                buttonVariants({ variant: 'outline', size: 'sm' }),
-                'hover:bg-primary/5 border-border/20 gap-1.5 text-xs',
-              )}
-            >
-              Resume
-              <ArrowUpRight className="size-3" />
-            </a>
-          </div>
-
-          {/* Mobile Navigation Trigger */}
-          <div className="flex items-center space-x-2 md:hidden">
-            <ThemeToggle />
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              aria-expanded={isOpen}
-              aria-label="Toggle main menu"
-              className={cn(
-                buttonVariants({ variant: 'ghost', size: 'icon-sm' }),
-                'text-muted-foreground size-8 hover:bg-transparent',
-              )}
-            >
-              {isOpen ? <X className="size-4" /> : <Menu className="size-4" />}
-            </button>
-          </div>
-        </div>
-      </Container>
-
-      {/* Mobile Drawer/Menu Overlay */}
-      <div
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <nav
         className={cn(
-          'border-border/10 bg-background/95 fixed inset-x-0 top-16 z-40 flex flex-col space-y-2 border-b p-4 shadow-lg backdrop-blur-xl transition-all duration-300 md:hidden',
-          isOpen ? 'translate-y-0 opacity-100' : 'pointer-events-none -translate-y-4 opacity-0',
+          'nav-shell mx-auto flex h-[62px] max-w-6xl items-center justify-between rounded-2xl pr-3 pl-5',
+          isScrolled && 'is-scrolled',
         )}
       >
-        <nav className="flex flex-col space-y-3">
+        <Link
+          href="/#hero"
+          className="nav-logo font-heading text-lg font-extrabold tracking-tighter md:text-xl"
+        >
+          alaminAhmed<span className="accent-dot" />
+        </Link>
+
+        <div className="hidden items-center gap-1 md:flex">
           {navItems.map((item) => (
             <a
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className="text-muted-foreground hover:text-foreground py-1 text-sm font-medium transition-colors"
+              key={item.id}
+              href={`/#${item.id}`}
+              className={cn('nav-link', activeSection === item.id && 'is-active')}
             >
               {item.name}
             </a>
           ))}
-        </nav>
-        <div className="border-border border-t pt-4">
+        </div>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
-            href="/alamin-ahmed-resume.pdf"
+            href={siteConfig.resume}
             download
-            onClick={() => setIsOpen(false)}
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'sm' }),
-              'flex w-full justify-center gap-1 text-xs',
-            )}
+            className={cn(buttonVariants({ size: 'sm' }), 'hidden md:inline-flex')}
           >
             Resume
-            <ArrowUpRight className="size-3" />
+            <ArrowUpRight />
           </a>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-expanded={isOpen}
+            aria-label="Toggle main menu"
+            className={cn(buttonVariants({ variant: 'outline', size: 'icon-sm' }), 'md:hidden')}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </button>
         </div>
+      </nav>
+
+      <div className={cn('nav-mobile mx-auto mt-2 max-w-6xl md:hidden', isOpen && 'is-open')}>
+        {navItems.map((item) => (
+          <a key={item.id} href={`/#${item.id}`} onClick={() => setIsOpen(false)}>
+            {item.name}
+          </a>
+        ))}
+        <a href={siteConfig.resume} download onClick={() => setIsOpen(false)}>
+          Resume
+        </a>
       </div>
     </header>
   );

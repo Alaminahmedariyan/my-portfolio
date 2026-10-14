@@ -9,7 +9,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32"
+      className="sec-6 relative py-16 md:py-24 lg:py-32"
     >
       <Container>
 
@@ -19,7 +19,7 @@ export default function ContactSection() {
           description="I'm currently available for Full Stack Development, AI Automation, Freelance Projects and Remote Opportunities."
         />
 
-        <div className="mt-16 grid gap-12 lg:grid-cols-2">
+        <div className="mt-10 grid gap-8 md:mt-16 lg:grid-cols-2 lg:gap-12">
 
           <ContactInfo />
 
@@ -28,6 +28,7 @@ export default function ContactSection() {
         </div>
 
       </Container>
+      <div className="sec-line" />
     </section>
   );
 }

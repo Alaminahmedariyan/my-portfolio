@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import { Loader2, Send } from 'lucide-react';
 import { toast } from 'sonner';
-
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 
@@ -12,9 +11,11 @@ import {
   ContactFormValues,
 } from '@/lib/validations/contact';
 
+import { cardVariants } from '@/components/ui/Card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
 
 export default function ContactForm() {
   const {
@@ -76,16 +77,18 @@ export default function ContactForm() {
         duration: 0.6,
         ease: 'easeOut',
       }}
-      className="bg-card space-y-6 rounded-3xl border p-8 shadow-sm"
+      className={cn(
+        cardVariants({ interactive: false }),
+        'min-w-0 space-y-5 p-5 sm:space-y-6 sm:p-8',
+      )}
     >
-      {/* Full Name */}
-
       <div>
-        <label className="mb-2 block text-sm font-medium">
+        <label htmlFor="contact-name" className="section-label mb-2 block">
           Full Name
         </label>
 
         <Input
+          id="contact-name"
           {...register('name')}
           placeholder="Alamin Ahmed"
         />
@@ -97,14 +100,13 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Email */}
-
       <div>
-        <label className="mb-2 block text-sm font-medium">
+        <label htmlFor="contact-email" className="section-label mb-2 block">
           Email Address
         </label>
 
         <Input
+          id="contact-email"
           type="email"
           {...register('email')}
           placeholder="you@example.com"
@@ -117,14 +119,13 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Subject */}
-
       <div>
-        <label className="mb-2 block text-sm font-medium">
+        <label htmlFor="contact-subject" className="section-label mb-2 block">
           Subject
         </label>
 
         <Input
+          id="contact-subject"
           {...register('subject')}
           placeholder="Let's build something amazing..."
         />
@@ -136,14 +137,13 @@ export default function ContactForm() {
         )}
       </div>
 
-      {/* Message */}
-
       <div>
-        <label className="mb-2 block text-sm font-medium">
+        <label htmlFor="contact-message" className="section-label mb-2 block">
           Message
         </label>
 
         <Textarea
+          id="contact-message"
           rows={7}
           {...register('message')}
           placeholder="Tell me about your project..."
@@ -155,8 +155,6 @@ export default function ContactForm() {
           </p>
         )}
       </div>
-
-      {/* Submit */}
 
       <Button
         type="submit"

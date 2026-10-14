@@ -1,177 +1,211 @@
-'use client';
-
+import type { CSSProperties } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+import {
+  ArrowRight,
+  Atom,
+  Code2,
+  Download,
+  Github,
+  Hand,
+  Leaf,
+  Linkedin,
+  Mail,
+  Server,
+} from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
-import { siteConfig } from '@/config/portfolio-data';
+import { buttonVariants } from '@/components/ui/button';
 import { Container } from '@/components/shared/Container';
+import { FadeIn } from '@/components/shared/FadeIn';
+import { StatsStrip } from '@/components/shared/StatsStrip';
+import { TypeWriter } from '@/components/shared/TypeWriter';
+import { siteConfig } from '@/config/portfolio-data';
+import { cn } from '@/lib/utils';
+
+const socials = [
+  { label: 'GitHub', href: siteConfig.links.github, icon: Github },
+  { label: 'LinkedIn', href: siteConfig.links.linkedin, icon: Linkedin },
+  { label: 'Email', href: `mailto:${siteConfig.links.email}`, icon: Mail },
+];
+
+/* Big faded word behind the hero */
+const backgroundWord = 'DEVELOPER';
+
+/* Words typed one by one under the headline (add more to cycle through them) */
+const typedWords = [siteConfig.title];
+
+/* Shown inside the small code card */
+const codeStack = ['MERN', 'Next.js', 'Tailwind'];
+
+/* Icons that orbit around the photo (angle is in degrees, clockwise from the right) */
+const orbitItems = [
+  { icon: Code2, angle: -125, ring: 'outer' },
+  { icon: Leaf, angle: -35, ring: 'outer' },
+  { icon: Server, angle: 40, ring: 'outer' },
+  { icon: Atom, angle: 160, ring: 'outer' },
+] as const;
 
 export function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative overflow-hidden py-24 md:min-h-screen md:py-0"
-    >
-      {/* Background */}
-      <div className="absolute inset-0 -z-20 bg-background" />
+    <>
+      <section id="hero" className="sec-1 relative overflow-hidden pt-8 pb-20 md:pt-12">
+        <span aria-hidden="true" className="hero-bgword">
+          {backgroundWord}
+        </span>
 
-      <div className="bg-grid absolute inset-0 -z-10 opacity-40 dark:opacity-30" />
+        <Container>
+          <div className="relative z-10 grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8">
+            {/* ───────── Left: text ───────── */}
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+              <FadeIn delay={0.08}>
+                <div className="hero-greet">
+                  <Hand className="size-5 text-primary-text" aria-hidden="true" />
+                  <span>
+                    Hey! I am <span className="hero-accent font-semibold uppercase">{siteConfig.name}</span>
+                  </span>
+                </div>
+              </FadeIn>
 
-      <Container>
-        <div className="grid items-center gap-16 md:min-h-screen lg:grid-cols-2">
-          {/* LEFT */}
+              <FadeIn delay={0.14}>
+                <h1 className="mt-8 text-4xl leading-[1.12] font-extrabold tracking-tight sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
+                  I code <span className="hero-accent pr-2 italic">scalable</span> ideas
+                  <br />
+                  into <span className="hero-accent">real world</span>
+                  <br />
+                  <span className="hero-accent">solutions.</span>
+                </h1>
+              </FadeIn>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            {/* Availability */}
+              <FadeIn delay={0.2}>
+                <p className="mt-7 min-h-8 font-mono text-xl sm:text-2xl">
+                  <TypeWriter words={typedWords} className="hero-accent" />
+                </p>
+              </FadeIn>
 
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-4 py-2 text-sm backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-green-500" />
+              <FadeIn delay={0.25}>
+                <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
+                  {siteConfig.description}
+                </p>
+              </FadeIn>
 
-              {siteConfig.availability}
-            </div>
-
-            {/* Name */}
-
-            <h1 className="text-foreground text-5xl font-bold leading-tight md:text-7xl">
-              {siteConfig.name}
-            </h1>
-
-            {/* Title */}
-
-            <h2 className="text-primary text-2xl font-semibold md:text-3xl">
-              {siteConfig.title}
-            </h2>
-
-            {/* Description */}
-
-            <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-              {siteConfig.description}
-            </p>
-
-            {/* Buttons */}
-
-            <div className="flex flex-wrap gap-4">
-              <Button
-                onClick={() =>
-                  document
-                    .querySelector('#projects')
-                    ?.scrollIntoView({ behavior: 'smooth' })
-                }
-                className="gap-2 shadow-lg"
-              >
-                View Projects
-
-                <ArrowRight size={18} />
-              </Button>
-
-              <Button
-                variant="outline"
-                onClick={() =>
-                  window.open(siteConfig.resume, '_blank')
-                }
-                className="gap-2 border-border"
-              >
-                <Download size={18} />
-
-                Download Resume
-              </Button>
-            </div>
-
-            {/* Social */}
-
-            <div className="flex gap-5 pt-2">
-              <a
-                href={siteConfig.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                <Github size={24} />
-              </a>
-
-              <a
-                href={siteConfig.links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                <Linkedin size={24} />
-              </a>
-
-              <a
-                href={`mailto:${siteConfig.links.email}`}
-                aria-label="Email"
-                className="text-muted-foreground transition hover:text-primary"
-              >
-                <Mail size={24} />
-              </a>
-            </div>
-
-            {/* Stats */}
-
-            <div className="grid grid-cols-3 gap-4 pt-4">
-              {siteConfig.heroStats?.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.2 + index * 0.1,
-                  }}
-                  className="rounded-2xl border border-border bg-card/70 p-5 text-center shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              <FadeIn delay={0.3} className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+                <Link
+                  href="#projects"
+                  className={cn(buttonVariants({ size: 'lg' }), 'tracking-wide uppercase')}
                 >
-                  <h3 className="text-primary text-2xl font-bold">
-                    {stat.value}
-                  </h3>
+                  View Projects
+                  <ArrowRight />
+                </Link>
+                <a
+                  href={siteConfig.resume}
+                  download
+                  className={cn(
+                    buttonVariants({ variant: 'ghost', size: 'lg' }),
+                    'tracking-wide uppercase',
+                  )}
+                >
+                  Download Resume
+                  <Download />
+                </a>
+              </FadeIn>
 
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {stat.label}
-                  </p>
-                </motion.div>
-              ))}
+              <FadeIn delay={0.35} className="mt-8 flex gap-3">
+                {socials.map(({ label, href, icon: Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={href.startsWith('http') ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={buttonVariants({ variant: 'outline', size: 'icon' })}
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </FadeIn>
             </div>
-          </motion.div>
 
-          {/* RIGHT */}
+            {/* ───────── Right: photo, rings, orbiting icons, code card ───────── */}
+            <FadeIn delay={0.15} className="justify-self-center lg:justify-self-end lg:-translate-y-1">
+              <div className="hero-visual">
+                <div className="hero-glow" />
 
-          <div className="relative flex justify-center lg:justify-end">
-            {/* Glow */}
+                <div className="hero-ring hero-ring--outer" />
+                <div className="hero-ring hero-ring--inner" />
 
-            <div className="absolute -z-10 h-80 w-80 rounded-full bg-primary/20 blur-[120px]" />
+                <div className="hero-orbit" aria-hidden="true">
+                  {orbitItems.map(({ icon: Icon, angle, ring }) => (
+                    <div
+                      key={angle}
+                      className="hero-orbit-item"
+                      style={
+                        {
+                          '--a': `${angle}deg`,
+                          '--r': ring === 'outer' ? 'var(--r-outer)' : 'var(--r-inner)',
+                        } as CSSProperties
+                      }
+                    >
+                      <span className="hero-orbit-badge">
+                        <Icon className="size-5" />
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
-            {/* Image */}
+                <div className="hero-portrait">
+                  <Image
+                    src={siteConfig.profileImage}
+                    alt={siteConfig.name}
+                    fill
+                    priority
+                    sizes="(min-width: 1024px) 40vw, 90vw"
+                    className="object-contain object-bottom"
+                  />
+                </div>
 
-            <motion.div
-              whileHover={{
-                scale: 1.03,
-              }}
-              transition={{
-                duration: 0.3,
-              }}
-              className="relative h-[420px] w-[320px] overflow-hidden rounded-3xl border border-border bg-card shadow-2xl"
-            >
-              <Image
-                src={siteConfig.profileImage}
-                alt={siteConfig.name}
-                fill
-                priority
-                loading="eager"
-                sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
-                className="object-cover transition-transform duration-500 hover:scale-105"
-              />
-            </motion.div>
+                <div className="hero-code" aria-hidden="true">
+                  <span className="hero-code-dot" />
+                  <p className="mb-2 text-[11px] text-muted-foreground">code</p>
+                  <div>
+                    <span className="text-primary-text">const</span>{' '}
+                    <span className="text-foreground">developer</span> = {'{'}
+                  </div>
+                  <div className="pl-3">
+                    name: <span className="text-primary-text">&quot;{siteConfig.name}&quot;</span>,
+                  </div>
+                  <div className="pl-3">
+                    stack: [
+                    <span className="text-primary-text">
+                      {codeStack.map((item) => `"${item}"`).join(', ')}
+                    </span>
+                    ],
+                  </div>
+                  <div className="pl-3">
+                    profession:{' '}
+                    <span className="text-primary-text">&quot;{siteConfig.title}&quot;</span>,
+                  </div>
+                  <div className="pl-3">
+                    available: <span className="text-primary-text">true</span>
+                  </div>
+                  <div>{'};'}</div>
+                  <div className="hero-code-foot">
+                    <Code2 className="size-3.5" />
+                    <span>Clean Code • Scalable • Efficient</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
           </div>
-        </div>
-      </Container>
-    </section>
+        </Container>
+        <div className="sec-line" />
+      </section>
+
+      <section className="sec-1 relative py-16">
+        <Container>
+          <StatsStrip stats={siteConfig.heroStats ?? []} />
+        </Container>
+        <div className="sec-line" />
+      </section>
+    </>
   );
 }

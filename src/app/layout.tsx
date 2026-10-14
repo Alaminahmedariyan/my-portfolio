@@ -10,16 +10,11 @@ import { siteConfig } from '@/config/portfolio-data';
 
 import { Toaster } from 'sonner';
 import StructuredData from '@/components/shared/StructuredData';
+import { Inter, JetBrains_Mono } from 'next/font/google';
+import { GlobalEffects } from '@/components/shared/GlobalEffects';
 
-const geistSans = Geist({
-  variable: '--font-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const inter = Inter({ variable: '--font-inter', subsets: ['latin'] });
+const jetbrains = JetBrains_Mono({ variable: '--font-jetbrains', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
@@ -85,25 +80,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="bg-background text-foreground min-h-screen font-sans">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          <div className="flex min-h-screen flex-col">
-            <StructuredData />
-            <Navbar />
+  <html
+    lang="en"
+    suppressHydrationWarning
+    className={`${inter.variable} ${jetbrains.variable} h-full antialiased`}
+  >
+    <body suppressHydrationWarning className="bg-background text-foreground min-h-screen font-sans">
+      <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <GlobalEffects />
+        <div className="flex min-h-screen flex-col">
+          <StructuredData />
+          <Navbar />
 
-            <main className="flex-1 pt-16">{children}</main>
+          <main className="flex-1 pt-16">{children}</main>
 
-            <Footer />
-          </div>
+          <Footer />
+        </div>
 
-          <Toaster position="top-right" richColors closeButton expand duration={4000} />
-        </ThemeProvider>
-      </body>
-    </html>
-  );
+        <Toaster position="top-right" richColors closeButton expand duration={4000} />
+      </ThemeProvider>
+    </body>
+  </html>
+);
 }

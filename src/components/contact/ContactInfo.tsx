@@ -1,136 +1,97 @@
-"use client";
+import Link from 'next/link';
 
-import Link from "next/link";
-import { Mail, Github, Linkedin, MapPin } from "lucide-react";
-import { motion } from "framer-motion";
-import { siteConfig } from "@/config/portfolio-data";
+import { ArrowUpRight, Github, Linkedin, Mail, MapPin } from 'lucide-react';
+
+import { Card, cardVariants } from '@/components/ui/Card';
+import { cn } from '@/lib/utils';
+import { FadeIn } from '@/components/shared/FadeIn';
+import { siteConfig } from '@/config/portfolio-data';
+import ContactAvailability from './ContactAvailability';
+
+const strip = (url: string) =>
+  url.replace(/^https?:\/\/(www\.)?/, '');
+
+const links = [
+  {
+    label: 'Email',
+    value: siteConfig.links.email,
+    href: `mailto:${siteConfig.links.email}`,
+    icon: Mail,
+    external: false,
+  },
+  {
+    label: 'GitHub',
+    value: strip(siteConfig.links.github),
+    href: siteConfig.links.github,
+    icon: Github,
+    external: true,
+  },
+  {
+    label: 'LinkedIn',
+    value: strip(siteConfig.links.linkedin),
+    href: siteConfig.links.linkedin,
+    icon: Linkedin,
+    external: true,
+  },
+];
 
 export default function ContactInfo() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -30 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="space-y-8"
-    >
-      {/* Heading */}
-
+    <FadeIn direction="right" className="min-w-0 space-y-6 sm:space-y-8">
       <div>
-        <h2 className="text-4xl font-bold">
-          Let us Build Something Amazing
-        </h2>
+        <h3 className="font-heading text-2xl font-bold tracking-tight">
+          Get in touch
+        </h3>
 
-        <p className="mt-5 text-lg leading-8 text-muted-foreground">
-          I am currently available for freelance work, full-time
-          opportunities, AI automation projects and modern Full Stack
-          applications.
-
-          If you have an idea, let us discuss it.
+        <p className="mt-4 leading-8 text-muted-foreground">
+          I am currently available for freelance work, full-time opportunities,
+          AI automation projects and modern Full Stack applications. If you
+          have an idea, let us discuss it.
         </p>
       </div>
 
-      {/* Cards */}
+      <div className="space-y-3 sm:space-y-4">
+        {links.map(({ label, value, href, icon: Icon, external }) => (
+          <Link
+            key={label}
+            href={href}
+            {...(external
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : {})}
+            className={cn(
+              cardVariants(),
+              'group flex items-center gap-4 p-4 sm:gap-5 sm:p-5',
+            )}
+          >
+            <div className="icon-box shrink-0">
+              <Icon className="size-5" />
+            </div>
 
-      <div className="space-y-5">
+            <div className="min-w-0 flex-1">
+              <p className="section-label">{label}</p>
+              <h4 className="mt-1 truncate font-semibold">{value}</h4>
+            </div>
 
-        <Link
-          href={`mailto:${siteConfig.links.email}`}
-          className="group flex items-center gap-5 rounded-2xl border p-5 transition-all hover:border-primary hover:shadow-lg"
+            <ArrowUpRight className="size-5 shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary-text" />
+          </Link>
+        ))}
+
+        <Card
+          interactive={false}
+          className="flex items-center gap-4 p-4 sm:gap-5 sm:p-5"
         >
-          <div className="rounded-xl bg-primary/10 p-3 text-primary">
-            <Mail size={24} />
+          <div className="icon-box shrink-0">
+            <MapPin className="size-5" />
           </div>
 
-          <div>
-            <p className="text-sm text-muted-foreground">
-              Email
-            </p>
-
-            <h3 className="font-semibold">
-              {siteConfig.links.email}
-            </h3>
+          <div className="min-w-0">
+            <p className="section-label">Location</p>
+            <h4 className="mt-1 font-semibold">{siteConfig.location}</h4>
           </div>
-        </Link>
-
-        <Link
-          href={siteConfig.links.github}
-          target="_blank"
-          className="group flex items-center gap-5 rounded-2xl border p-5 transition-all hover:border-primary hover:shadow-lg"
-        >
-          <div className="rounded-xl bg-primary/10 p-3 text-primary">
-            <Github size={24} />
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground">
-              GitHub
-            </p>
-
-            <h3 className="font-semibold">
-              github.com/alaminahmed
-            </h3>
-          </div>
-        </Link>
-
-        <Link
-          href={siteConfig.links.linkedin}
-          target="_blank"
-          className="group flex items-center gap-5 rounded-2xl border p-5 transition-all hover:border-primary hover:shadow-lg"
-        >
-          <div className="rounded-xl bg-primary/10 p-3 text-primary">
-            <Linkedin size={24} />
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground">
-              LinkedIn
-            </p>
-
-            <h3 className="font-semibold">
-              linkedin.com/in/alaminahmed
-            </h3>
-          </div>
-        </Link>
-
-        <div className="flex items-center gap-5 rounded-2xl border p-5">
-          <div className="rounded-xl bg-primary/10 p-3 text-primary">
-            <MapPin size={24} />
-          </div>
-
-          <div>
-            <p className="text-sm text-muted-foreground">
-              Location
-            </p>
-
-            <h3 className="font-semibold">
-              {siteConfig.location}
-            </h3>
-          </div>
-        </div>
-
+        </Card>
       </div>
 
-      {/* Availability */}
-
-      <div className="rounded-3xl border bg-primary/5 p-6">
-
-        <div className="flex items-center gap-3">
-
-          <span className="h-3 w-3 animate-pulse rounded-full bg-green-500" />
-
-          <h3 className="font-semibold">
-            Available for New Projects
-          </h3>
-
-        </div>
-
-        <p className="mt-3 leading-7 text-muted-foreground">
-          Currently accepting freelance projects, remote full-time
-          opportunities and AI automation collaborations.
-        </p>
-
-      </div>
-    </motion.div>
+      <ContactAvailability />
+    </FadeIn>
   );
 }

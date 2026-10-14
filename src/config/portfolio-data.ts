@@ -10,9 +10,9 @@ export const siteConfig: SiteConfig = {
   url: 'https://alaminahmed.dev',
   ogImage: '/images/og.png',
 
-  profileImage: '/profile.jpg',
+  profileImage: '/profile.png',
   profileImage2: '/profile2.png',
-  resume: '/alamin-ahmed-resume.pdf',
+  resume: '/resume.pdf',
 
   location: 'Sherpur, Mymensingh, Bangladesh',
   availability: 'Available for Freelance',
@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 
   heroStats: [
     {
-      value: '6+',
+      value: '4+',
       label: 'Projects',
     },
     {
@@ -45,38 +45,37 @@ export const siteConfig: SiteConfig = {
 
 export const skills: readonly Skill[] = [
   // Frontend
-  { name: 'JavaScript', iconName: 'javascript', percentage: 92, category: 'Frontend' },
-  { name: 'TypeScript', iconName: 'typescript', percentage: 90, category: 'Frontend' },
-  { name: 'React', iconName: 'react', percentage: 95, category: 'Frontend' },
-  { name: 'Next.js', iconName: 'nextjs', percentage: 94, category: 'Frontend' },
-  { name: 'Tailwind CSS', iconName: 'tailwind', percentage: 96, category: 'Frontend' },
-  { name: 'Redux', iconName: 'redux', percentage: 85, category: 'Frontend' },
-  { name: 'TanStack Query', iconName: 'query', percentage: 84, category: 'Frontend' },
+  { name: 'JavaScript', iconName: 'javascript', category: 'Frontend' },
+  { name: 'TypeScript', iconName: 'typescript', category: 'Frontend' },
+  { name: 'React', iconName: 'react', category: 'Frontend' },
+  { name: 'Next.js', iconName: 'nextjs', category: 'Frontend' },
+  { name: 'Tailwind CSS', iconName: 'tailwind', category: 'Frontend' },
+  { name: 'Redux', iconName: 'redux', category: 'Frontend' },
+  { name: 'TanStack Query', iconName: 'query', category: 'Frontend' },
 
   // Backend
-  { name: 'Node.js', iconName: 'nodejs', percentage: 92, category: 'Backend' },
-  { name: 'Express.js', iconName: 'express', percentage: 91, category: 'Backend' },
-  { name: 'Prisma ORM', iconName: 'prisma', percentage: 90, category: 'Backend' },
-  { name: 'Socket.io', iconName: 'socket', percentage: 82, category: 'Backend' },
+  { name: 'Node.js', iconName: 'nodejs', category: 'Backend' },
+  { name: 'Express.js', iconName: 'express', category: 'Backend' },
+  { name: 'Prisma ORM', iconName: 'prisma', category: 'Backend' },
+  { name: 'Socket.io', iconName: 'socket', category: 'Backend' },
 
   // Database
-  { name: 'PostgreSQL', iconName: 'postgresql', percentage: 90, category: 'Database' },
-  { name: 'MongoDB', iconName: 'mongodb', percentage: 88, category: 'Database' },
+  { name: 'PostgreSQL', iconName: 'postgresql', category: 'Database' },
+  { name: 'MongoDB', iconName: 'mongodb', category: 'Database' },
 
   // AI
-  { name: 'OpenAI', iconName: 'openai', percentage: 90, category: 'AI' },
-  { name: 'LangChain', iconName: 'langchain', percentage: 82, category: 'AI' },
-  { name: 'LangFlow', iconName: 'langflow', percentage: 80, category: 'AI' },
-  { name: 'n8n', iconName: 'n8n', percentage: 92, category: 'AI' },
-  { name: 'Prompt Engineering', iconName: 'prompt', percentage: 91, category: 'AI' },
+  { name: 'OpenAI', iconName: 'openai', category: 'AI' },
+  { name: 'LangChain', iconName: 'langchain', category: 'AI' },
+  { name: 'LangFlow', iconName: 'langflow', category: 'AI' },
+  { name: 'n8n', iconName: 'n8n', category: 'AI' },
+  { name: 'Prompt Engineering', iconName: 'prompt', category: 'AI' },
 
   // DevOps
-  { name: 'Docker', iconName: 'docker', percentage: 82, category: 'DevOps' },
-  { name: 'Git', iconName: 'git', percentage: 94, category: 'DevOps' },
-  { name: 'GitHub', iconName: 'github', percentage: 95, category: 'DevOps' },
-  { name: 'Linux', iconName: 'linux', percentage: 84, category: 'DevOps' },
+  { name: 'Docker', iconName: 'docker', category: 'DevOps' },
+  { name: 'Git', iconName: 'git', category: 'DevOps' },
+  { name: 'GitHub', iconName: 'github', category: 'DevOps' },
+  { name: 'Linux', iconName: 'linux', category: 'DevOps' },
 ];
-
 export const educationList: readonly Education[] = [
   {
     id: 'edu-1',
@@ -118,23 +117,69 @@ export const experienceList: readonly Experience[] = [
 ];
 
 export const projectsList: readonly Project[] = [
+  // ───────────────────────── 1. EVALORA ─────────────────────────
   {
-    slug: 'launch-hunt',
+    slug: 'evalora',
 
-    title: 'Launch Hunt',
+    title: 'Evalora',
 
-    subtitle: 'Premium Product Launch Platform',
+    subtitle: 'Developer Assessment & Hiring Platform',
 
-    category: 'Full Stack',
+    category: 'Full Stack SaaS',
 
-    description: 'A premium product launch platform connecting founders and early adopters.',
+    description:
+      'A full-featured developer assessment platform where recruiters build coding assessments, invite candidates, and review results, ranks and proctoring signals in one place.',
 
     longDescription:
-      'Launch Hunt is a modern Product Hunt clone where users can launch products, receive votes, rank organically, and gain visibility through an optimized ranking algorithm.',
+      'Evalora is a multi-tenant SaaS for technical hiring. Recruiters create assessments from a problem bank of MCQ, coding and written questions, invite candidates by email, and review results through a grading queue, a live leaderboard and proctoring timelines. Candidates take timed attempts with autosave, and the platform covers plans with Stripe checkout, two-factor auth, Google/GitHub sign-in, an admin panel and a public marketing site with a Markdown blog.',
+
+    purpose:
+      'Help companies hire developers faster by running, grading and ranking technical assessments in one platform.',
+
+    problemsSolved: [
+      {
+        problem: 'Recruiters waste time manually screening and comparing candidates.',
+        solution:
+          'Auto-graded MCQs, a grading queue for coding/written answers, and a live leaderboard with one-click rank computation.',
+      },
+      {
+        problem: 'Remote assessments are hard to trust.',
+        solution:
+          'Proctoring signals (tab switches, focus loss, full-screen exits, copy/paste) are recorded and shown on a timeline for human review.',
+      },
+      {
+        problem: "One company must never see another company's data.",
+        solution:
+          "Multi-tenant design: every recruiter query is scoped to the company, and other companies' data returns 404.",
+      },
+      {
+        problem: 'Double clicks or retries can create duplicate invitations, attempts or payments.',
+        solution: 'Idempotency keys protect invitations, attempt start/submit and checkout.',
+      },
+      {
+        problem: 'Running candidate code is a security risk.',
+        solution:
+          'Coding answers are never executed; reviewers read the code next to the sample test cases.',
+      },
+      {
+        problem: 'Candidates lose progress on connection or tab issues.',
+        solution:
+          'Timed attempts with autosave, auto-submit on expiry, optional shuffling and forward-only review.',
+      },
+    ],
+
+    highlights: [
+      'Separate Next.js frontend and Express API with 15 backend modules',
+      'Role-based access for Admin, Recruiter and Candidate',
+      'Stripe checkout with Free / Pro / Enterprise plan limits',
+      'Two-factor auth, email OTP, Google and GitHub sign-in',
+      'Candidate controls: profile visibility, data export, account deletion',
+      'Admin tools: users, companies, payments, audit logs, blog, contact messages',
+    ],
 
     role: 'Full Stack Developer',
 
-    duration: '3 Weeks',
+    duration: '6+ Weeks',
 
     team: 'Solo',
 
@@ -142,501 +187,444 @@ export const projectsList: readonly Project[] = [
 
     featured: true,
 
-    thumbnail: '/images/projects/launch1.png',
+    thumbnail: '/images/projects/evalora1.png',
 
     gallery: [
-      '/images/projects/launch2.png',
-      '/images/projects/launch3.png',
-      '/images/projects/launch4.png',
-      '/images/projects/launch5.png',
+      '/images/projects/evalora2.png',
+      '/images/projects/evalora3.png',
+      '/images/projects/evalora4.png',
+      '/images/projects/evalora5.png',
     ],
 
-    techStack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'TailwindCSS'],
+    techStack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'TanStack Query',
+      'Better Auth',
+      'Zod',
+      'shadcn/ui',
+      'Express.js',
+      'Prisma',
+      'PostgreSQL',
+      'Redis',
+      'Stripe',
+      'Cloudinary',
+    ],
 
     features: [
-      'Real-time Upvoting',
-      'Trending Ranking',
-      'Authentication',
-      'Product Submission',
-      'SEO Optimized',
+      'Problem Bank (MCQ, Coding, Written)',
+      'Assessment Builder with Versioning',
+      'Email Invitations',
+      'Timed Attempts with Autosave',
+      'Grading Queue & Auto-graded MCQs',
+      'Live Leaderboard & Ranking',
+      'Proctoring Timeline',
+      'Stripe Plans & Billing',
+      'Admin Dashboard & Audit Logs',
+      'Markdown Blog with RSS & Sitemap',
     ],
 
-    challenges: ['Ranking Algorithm', 'Performance Optimization', 'Database Query Optimization'],
+    challenges: [
+      'Designing a secure multi-tenant data model',
+      'Preventing duplicate actions with idempotency keys',
+      'Keeping the session cookie first-party across frontend and API (Next.js rewrites)',
+      'Consistent attempt timing, auto-submit and proctoring counts',
+    ],
 
-    futureImprovements: ['Notifications', 'Comments', 'Product Reviews'],
+    futureImprovements: [
+      'Sandboxed code execution with automated test cases',
+      'Automatic subscription renewal',
+      'Webcam-based proctoring',
+      'AI-assisted grading for written answers',
+    ],
 
     problemStatement:
-      'Founders need a platform where they can launch products and receive real community feedback.',
+      'Hiring developers is slow because screening, grading and trusting remote assessments all happen manually across scattered tools.',
 
-    businessGoal: 'Build a Product Hunt alternative focused on startups.',
+    businessGoal:
+      'Give recruiters one platform to create assessments, evaluate candidates fairly and rank them quickly.',
 
-    architectureDiagram: 'Next.js → API → Prisma → PostgreSQL',
+    architectureDiagram:
+      'Next.js (App Router) → Rewrites /api/v1 → Express API → Prisma → PostgreSQL (+ Redis, Stripe, Cloudinary)',
 
-    coreFeatures: ['Authentication', 'Voting', 'Ranking', 'Dashboard'],
+    coreFeatures: ['Authentication', 'Assessments', 'Attempts', 'Grading', 'Leaderboard', 'Billing'],
 
-    lessonsLearned: ['Server Components', 'Prisma Optimization', 'Caching'],
+    lessonsLearned: [
+      'Multi-tenant authorization and data scoping',
+      'Idempotent API design',
+      'Better Auth with 2FA and OAuth',
+      'Stripe checkout and webhook handling',
+    ],
 
-    liveUrl: 'https://your-demo.com',
+    liveUrl: 'https://evalora-client.vercel.app',
 
     githubUrl: 'https://github.com/yourrepo',
   },
-{
-  slug: 'leadpulse',
 
-  title: 'LeadPulse',
-
-  subtitle: 'AI Lead Generation & Sales Automation Platform',
-
-  category: 'AI Automation / Backend',
-
-  description:
-    'An AI-powered lead generation and outbound sales automation platform that discovers prospects, researches companies, and generates personalized outreach emails.',
-
-  longDescription:
-    'LeadPulse is a modern AI-powered sales automation platform designed to simplify outbound prospecting. It automatically researches companies, gathers lead information, generates personalized email campaigns using AI, and manages outreach workflows through an intuitive dashboard. The platform integrates multiple AI agents and automation tools to reduce manual work and improve sales productivity.',
-
-  role: 'Full Stack AI Developer',
-
-  duration: '4 Weeks',
-
-  team: 'Solo',
-
-  status: 'Completed',
-
-  featured: true,
-
-  thumbnail: '/images/projects/leadpulse1.png',
-
-  gallery: [
-    '/images/projects/leadpulse2.png',
-    '/images/projects/leadpulse3.png',
-    '/images/projects/leadpulse4.png',
-    '/images/projects/leadpulse5.png',
-  ],
-
-  techStack: [
-    'Next.js',
-    'TypeScript',
-    'Node.js',
-    'Prisma ORM',
-    'PostgreSQL',
-    'OpenAI API',
-    'LangChain',
-    'n8n',
-  ],
-
-  features: [
-    'AI Lead Discovery',
-    'Company Research Automation',
-    'Personalized Email Generation',
-    'Workflow Automation',
-    'CRM Ready Dashboard',
-  ],
-
-  challenges: [
-    'Handling OpenAI API rate limits.',
-    'Managing multi-agent workflow execution.',
-    'Building reliable web scraping pipelines.',
-  ],
-
-  futureImprovements: [
-    'HubSpot Integration',
-    'Salesforce Integration',
-    'Reply Sentiment Analysis',
-    'Campaign Analytics',
-  ],
-
-  problemStatement:
-    'Sales teams spend countless hours manually researching prospects and writing repetitive cold emails, reducing productivity and conversion rates.',
-
-  businessGoal:
-    'Automate lead research and outbound sales processes using AI to increase productivity, improve response rates, and reduce manual effort.',
-
-  architectureDiagram:
-    'Next.js → API Routes → LangChain → OpenAI → Prisma ORM → PostgreSQL → n8n',
-
-  coreFeatures: [
-    'Authentication',
-    'AI Lead Research',
-    'Email Generation',
-    'Automation Workflow',
-    'Dashboard',
-  ],
-
-  lessonsLearned: [
-    'Building AI workflow orchestration with LangChain.',
-    'Prompt engineering for consistent AI responses.',
-    'Database optimization using Prisma ORM.',
-  ],
-
-  liveUrl: 'https://your-demo.com',
-
-  githubUrl: 'https://github.com/yourrepo',
-},
-{
-  slug: 'resuai',
-
-  title: 'ResuAI',
-
-  subtitle: 'AI Resume Builder & ATS Optimization Platform',
-
-  category: 'AI Web Service',
-
-  description:
-    'An AI-powered resume builder that analyzes resumes, improves ATS compatibility, and generates recruiter-friendly content.',
-
-  longDescription:
-    'ResuAI is a premium AI-powered resume optimization platform designed to help job seekers build professional resumes that perform better in Applicant Tracking Systems (ATS). Users can upload their resumes, compare them against job descriptions, identify missing skills, receive AI-generated suggestions, and export polished resumes ready for recruiters.',
-
-  role: 'Full Stack Developer',
-
-  duration: '3 Weeks',
-
-  team: 'Solo',
-
-  status: 'Completed',
-
-  featured: true,
-
-  thumbnail: '/images/projects/resuai1.png',
-
-  gallery: [
-    '/images/projects/resuai2.png',
-    '/images/projects/resuai3.png',
-    '/images/projects/resuai4.png',
-    '/images/projects/resuai5.png',
-  ],
-
-  techStack: [
-    'Next.js',
-    'TypeScript',
-    'OpenAI API',
-    'Prisma ORM',
-    'PostgreSQL',
-    'Tailwind CSS',
-    'Zod',
-  ],
-
-  features: [
-    'AI Resume Builder',
-    'ATS Score Analysis',
-    'Job Description Matching',
-    'AI Content Suggestions',
-    'PDF Resume Export',
-  ],
-
-  challenges: [
-    'Extracting clean text from complex PDF resumes.',
-    'Reducing AI response latency.',
-    'Generating consistent ATS scoring.',
-  ],
-
-  futureImprovements: [
-    'LinkedIn Profile Optimization',
-    'Cover Letter Generator',
-    'Interview Question Generator',
-    'Multiple Resume Templates',
-  ],
-
-  problemStatement:
-    'Most job seekers submit resumes that fail Applicant Tracking Systems because they are not optimized for specific job descriptions.',
-
-  businessGoal:
-    'Provide an AI-powered platform that improves resume quality, increases ATS compatibility, and helps candidates secure more interviews.',
-
-  architectureDiagram:
-    'Next.js → Server Actions → OpenAI API → Prisma ORM → PostgreSQL',
-
-  coreFeatures: [
-    'Authentication',
-    'Resume Upload',
-    'ATS Analysis',
-    'AI Optimization',
-    'Dashboard',
-  ],
-
-  lessonsLearned: [
-    'Working with OpenAI structured outputs.',
-    'Optimizing PDF parsing workflows.',
-    'Building scalable AI-powered applications.',
-  ],
-
-  liveUrl: 'https://your-demo.com',
-
-  githubUrl: 'https://github.com/yourrepo',
-},
-{
-  slug: 'ecospark-hub',
-
-  title: 'EcoSpark Hub',
-
-  subtitle: 'Smart Community Sustainability Platform',
-
-  category: 'Community Platform',
-
-  description:
-    'A modern sustainability platform that encourages eco-friendly habits through carbon tracking, recycling guides, and community challenges.',
-
-  longDescription:
-    'EcoSpark Hub is a community-driven sustainability platform designed to help individuals build environmentally friendly habits. Users can calculate their carbon footprint, participate in green challenges, discover nearby recycling centers, earn achievement badges, and compete with friends through interactive leaderboards. The platform promotes environmental awareness using modern web technologies and engaging user experiences.',
-
-  role: 'Full Stack Developer',
-
-  duration: '3 Weeks',
-
-  team: 'Solo',
-
-  status: 'Completed',
-
-  featured: false,
-
-  thumbnail: '/images/projects/ecospark1.png',
-
-  gallery: [
-    '/images/projects/ecospark2.png',
-    '/images/projects/ecospark3.png',
-    '/images/projects/ecospark4.png',
-    '/images/projects/ecospark5.png',
-  ],
-
-  techStack: [
-    'React',
-    'Node.js',
-    'Express.js',
-    'MongoDB',
-    'Mongoose',
-    'Tailwind CSS',
-    'JWT',
-  ],
-
-  features: [
-    'Carbon Footprint Calculator',
-    'Community Challenges',
-    'Interactive Leaderboard',
-    'Recycling Center Finder',
-    'Achievement Badge System',
-  ],
-
-  challenges: [
-    'Designing an accurate carbon footprint calculation system.',
-    'Building a scalable leaderboard with MongoDB aggregation.',
-    'Optimizing dashboard performance with large datasets.',
-  ],
-
-  futureImprovements: [
-    'Mobile Application',
-    'AI Sustainability Assistant',
-    'Google Maps Integration',
-    'Organization Dashboard',
-  ],
-
-  problemStatement:
-    'Many people want to live sustainably but lack practical tools to measure and improve their environmental impact.',
-
-  businessGoal:
-    'Create an engaging platform that motivates users to adopt eco-friendly habits while building an active sustainability community.',
-
-  architectureDiagram:
-    'React → Express API → MongoDB → JWT Authentication',
-
-  coreFeatures: [
-    'Authentication',
-    'Carbon Tracking',
-    'Community Dashboard',
-    'Leaderboard',
-    'Challenges',
-  ],
-
-  lessonsLearned: [
-    'MongoDB aggregation pipelines.',
-    'Designing scalable REST APIs.',
-    'Performance optimization in React applications.',
-  ],
-
-  liveUrl: 'https://your-demo.com',
-
-  githubUrl: 'https://github.com/yourrepo',
-},
-{
-  slug: 'ratemytutor',
-
-  title: 'RateMyTutor',
-
-  subtitle: 'Smart Tutor Booking & Learning Platform',
-
-  category: 'Educational Platform',
-
-  description:
-    'A modern tutor marketplace where students can discover, book, review, and learn from verified tutors.',
-
-  longDescription:
-    'RateMyTutor is a full-stack educational platform that connects students with qualified tutors. Students can browse tutor profiles, compare ratings, book sessions, make secure online payments, and leave reviews after each class. Tutors can manage their schedules, monitor bookings, and communicate with students through an intuitive dashboard.',
-
-  role: 'Full Stack Developer',
-
-  duration: '3 Weeks',
-
-  team: 'Solo',
-
-  status: 'Completed',
-
-  featured: false,
-
-  thumbnail: '/images/projects/ratemytutor1.png',
-
-  gallery: [
-    '/images/projects/project1.png',
-    '/images/projects/project2.png',
-    '/images/projects/project3.png',
-  ],
-
-  techStack: [
-    'Next.js',
-    'TypeScript',
-    'Prisma ORM',
-    'PostgreSQL',
-    'Stripe',
-    'Tailwind CSS',
-    'NextAuth',
-  ],
-
-  features: [
-    'Tutor Discovery',
-    'Advanced Search & Filters',
-    'Booking Management',
-    'Online Payment',
-    'Ratings & Reviews',
-  ],
-
-  challenges: [
-    'Managing tutor availability and booking conflicts.',
-    'Integrating secure online payments.',
-    'Designing a scalable review and rating system.',
-  ],
-
-  futureImprovements: [
-    'Live Video Classes',
-    'AI Tutor Recommendation',
-    'Assignment Management',
-    'Student Progress Tracking',
-  ],
-
-  problemStatement:
-    'Students often struggle to find trustworthy tutors and manage bookings efficiently through traditional methods.',
-
-  businessGoal:
-    'Build a reliable online tutoring marketplace that simplifies tutor discovery, scheduling, and secure payments.',
-
-  architectureDiagram:
-    'Next.js → API Routes → Prisma ORM → PostgreSQL → Stripe',
-
-  coreFeatures: [
-    'Authentication',
-    'Tutor Profiles',
-    'Booking System',
-    'Payment Gateway',
-    'Student Dashboard',
-  ],
-
-  lessonsLearned: [
-    'Building scalable booking systems.',
-    'Integrating Stripe payment workflows.',
-    'Optimizing relational database queries with Prisma.',
-  ],
-
-  liveUrl: 'https://your-demo.com',
-
-  githubUrl: 'https://github.com/yourrepo',
-},
-{
-  slug: 'invoicesync',
-
-  title: 'InvoiceSync',
-
-  subtitle: 'Smart Invoice & Business Management Platform',
-
-  category: 'SaaS / Financial Utility',
-
-  description:
-    'A modern SaaS platform that helps freelancers and businesses create invoices, track payments, manage clients, and automate billing workflows.',
-
-  longDescription:
-    'InvoiceSync is a comprehensive invoice and client management platform built for freelancers, agencies, and small businesses. Users can generate professional invoices, manage customers, track payment statuses, receive automated payment reminders, analyze revenue through interactive dashboards, and simplify financial workflows using automation. The platform focuses on improving productivity while reducing manual accounting tasks.',
-
-  role: 'Full Stack Developer',
-
-  duration: '3 Weeks',
-
-  team: 'Solo',
-
-  status: 'Completed',
-
-  featured: false,
-
-  thumbnail: '/images/projects/invoicesync1.png',
-
-  gallery: [
-    '/images/projects/project1.png',
-    '/images/projects/project2.png',
-    '/images/projects/project3.png',
-  ],
-
-  techStack: [
-    'Next.js',
-    'TypeScript',
-    'Prisma ORM',
-    'PostgreSQL',
-    'Tailwind CSS',
-    'Stripe',
-    'Zod',
-  ],
-
-  features: [
-    'Invoice Generator',
-    'Client Management',
-    'Payment Tracking',
-    'Automated Email Reminders',
-    'Revenue Dashboard',
-  ],
-
-  challenges: [
-    'Designing a scalable invoice numbering system.',
-    'Building recurring invoice automation.',
-    'Managing secure payment workflows.',
-  ],
-
-  futureImprovements: [
-    'Multi-Currency Support',
-    'Subscription Billing',
-    'Mobile Application',
-    'Accounting Software Integration',
-  ],
-
-  problemStatement:
-    'Freelancers and small businesses often rely on spreadsheets and manual processes to manage invoices, making payment tracking inefficient and error-prone.',
-
-  businessGoal:
-    'Develop a modern SaaS platform that simplifies invoicing, automates payment reminders, and provides businesses with better financial visibility.',
-
-  architectureDiagram:
-    'Next.js → API Routes → Prisma ORM → PostgreSQL → Stripe',
-
-  coreFeatures: [
-    'Authentication',
-    'Invoice Management',
-    'Client Dashboard',
-    'Payment Processing',
-    'Business Analytics',
-  ],
-
-  lessonsLearned: [
-    'Designing scalable financial database models.',
-    'Integrating secure payment gateways.',
-    'Building reusable dashboard components.',
-  ],
-
-  liveUrl: 'https://your-demo.com',
-
-  githubUrl: 'https://github.com/yourrepo',
-},
+  // ───────────────────────── 2. NEXIVO AI ─────────────────────────
+  {
+    slug: 'nexivo-ai',
+
+    title: 'Nexivo AI',
+
+    subtitle: 'AI-Powered Agency Management Platform',
+
+    category: 'AI SaaS / Full Stack',
+
+    description:
+      'A full-stack SaaS that runs a digital agency end to end: leads, clients, projects, AI proposals, invoices and Stripe payments in one platform.',
+
+    longDescription:
+      'Nexivo AI combines CRM, project management, AI workflows, proposals, invoicing and payments into a single agency platform. A Next.js 16 frontend with role-based dashboards (Admin, Team, Client) talks to a modular Express 5 + Prisma + PostgreSQL backend with Better Auth, Stripe checkout and webhooks, Cloudinary file storage and Resend emails. AI conversations and AI proposal generation are first-class modules.',
+
+    purpose:
+      'Give digital agencies one platform to take a lead all the way to a paid invoice, with AI helping write proposals and automate work.',
+
+    problemsSolved: [
+      {
+        problem: 'Agencies juggle separate tools for leads, projects, proposals and invoices.',
+        solution:
+          'One platform with a connected flow: Lead → Client → Project → Proposal → Invoice → Payment.',
+      },
+      {
+        problem: 'Writing proposals and quotes by hand is slow.',
+        solution:
+          'AI conversations and AI proposal generation, with a review, edit and accept workflow.',
+      },
+      {
+        problem: 'Clients keep asking for project updates.',
+        solution:
+          'A client portal showing project progress, milestones, timelines, files, invoices and notifications.',
+      },
+      {
+        problem: 'Payment webhooks can be processed twice and corrupt invoice status.',
+        solution:
+          'A dedicated Stripe webhook event table with signature verification prevents duplicate processing.',
+      },
+      {
+        problem: 'Different people need different access to sensitive agency data.',
+        solution:
+          'Role-based access control (Super Admin, Admin, Team Member, Client, User) with activity and audit logs.',
+      },
+    ],
+
+    highlights: [
+      'Frontend and backend built separately, with 18 backend modules covered by a Postman suite',
+      'Controller → Service → Prisma architecture with Zod validation on every request',
+      'Lead lifecycle: New → Contacted → Quoted → Meeting → Negotiation → Won/Lost',
+      'Stripe checkout with verified webhooks',
+      'Hashed API keys for service-to-service integrations',
+      'Helmet, CORS, rate limiting and soft delete for security',
+    ],
+
+    role: 'Full Stack Developer',
+
+    duration: '8+ Weeks',
+
+    team: 'Solo',
+
+    status: 'Completed',
+
+    featured: true,
+
+    thumbnail: '/images/projects/nexivo1.png',
+
+    gallery: [
+      '/images/projects/nexivo2.png',
+      '/images/projects/nexivo3.png',
+      '/images/projects/nexivo4.png',
+    ],
+
+    techStack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'TanStack Query',
+      'TanStack Table',
+      'Zustand',
+      'React Hook Form',
+      'Zod',
+      'Framer Motion',
+      'Express.js',
+      'Prisma',
+      'PostgreSQL',
+      'Better Auth',
+      'Stripe',
+      'Cloudinary',
+      'Resend',
+    ],
+
+    features: [
+      'Lead & CRM Management',
+      'Client & Project Management',
+      'Milestones, Timelines & Project Files',
+      'AI Conversations',
+      'AI Proposal Generator',
+      'Invoices & Stripe Payments',
+      'Notification Center',
+      'Activity & Audit Logs',
+      'API Key Management',
+      'Dark / Light Theme',
+    ],
+
+    challenges: [
+      'Designing a modular backend with clean Controller → Service → Prisma layers',
+      'Handling Stripe webhooks safely without duplicate processing',
+      'Role-based UI and permissions across Admin, Team and Client areas',
+      'Keeping server state and client state cleanly separated (TanStack Query + Zustand)',
+    ],
+
+    futureImprovements: [
+      'Real-time notifications',
+      'More AI workflow automations',
+      'Calendar integration for meetings',
+      'Advanced analytics dashboard',
+    ],
+
+    problemStatement:
+      'Digital agencies lose time and revenue because leads, projects, proposals and invoices live in disconnected tools.',
+
+    businessGoal:
+      'Create one AI-powered operating platform for agencies, from the first lead to the final payment.',
+
+    architectureDiagram:
+      'Next.js → API Client → Express API (Controller → Service) → Prisma → PostgreSQL (+ Stripe, Cloudinary, Resend, Better Auth)',
+
+    coreFeatures: ['Authentication', 'Leads', 'Projects', 'AI Proposals', 'Invoices', 'Payments'],
+
+    lessonsLearned: [
+      'Designing a modular, scalable REST API',
+      'Stripe checkout and webhook idempotency',
+      'Role-based authorization end to end',
+      'Structuring a large Next.js app with hooks, query and API layers',
+    ],
+
+    liveUrl: 'https://nexivo-ai-frontend.vercel.app',
+
+    githubUrl: 'https://github.com/Alaminahmedariyan/nexivo-ai-frontend',
+  },
+
+  // ───────────────────────── 3. GEARUP ─────────────────────────
+  {
+    slug: 'gearup',
+
+    title: 'GearUp',
+
+    subtitle: 'Gear Rental Marketplace',
+
+    category: 'Marketplace / Full Stack',
+
+    description:
+      'A gear and equipment rental marketplace where customers rent gear, providers manage inventory, and admins moderate the platform.',
+
+    longDescription:
+      'GearUp is a full-stack rental marketplace built with Next.js 16 (App Router). Customers browse and filter gear, place rental orders, pay online and leave reviews. Providers list and manage their gear and handle rental requests. Admins manage users, categories, gear moderation, rentals and payments. It supports JWT authentication with refresh tokens, Google OAuth, and payments through Stripe and SSLCommerz.',
+
+    purpose:
+      'Let people rent gear instead of buying it, while giving providers a simple way to earn from their equipment.',
+
+    problemsSolved: [
+      {
+        problem: 'Buying expensive gear for a short-term need is wasteful.',
+        solution: 'A marketplace to browse, filter and rent gear with a clear booking flow.',
+      },
+      {
+        problem: 'Gear owners have no easy way to list and manage their inventory.',
+        solution:
+          'A provider dashboard to add, edit and manage gear listings and fulfil rental requests.',
+      },
+      {
+        problem: 'Marketplaces need quality control.',
+        solution: 'Admin tools to moderate gear, manage categories and users, and review all payments.',
+      },
+      {
+        problem: 'Users in different regions prefer different payment methods.',
+        solution: 'Both Stripe and SSLCommerz payment options.',
+      },
+    ],
+
+    highlights: [
+      'Three roles with separate dashboards: Customer, Provider and Admin',
+      'JWT access and refresh tokens with Google OAuth',
+      'Stripe and SSLCommerz payments with success and cancel flows',
+      'Gear browsing with filters, detail pages and reviews',
+      'Light and dark theme with Tailwind CSS 4 and shadcn/ui',
+    ],
+
+    role: 'Full Stack Developer',
+
+    duration: '4+ Weeks',
+
+    team: 'Solo',
+
+    status: 'Completed',
+
+    featured: true,
+
+    thumbnail: '/images/projects/gearup1.png',
+
+    gallery: [
+      '/images/projects/gearup2.png',
+      '/images/projects/gearup3.png',
+      '/images/projects/gearup4.png',
+    ],
+
+    techStack: [
+      'Next.js',
+      'React',
+      'TypeScript',
+      'Tailwind CSS',
+      'shadcn/ui',
+      'JWT',
+      'Google OAuth',
+      'Stripe',
+      'SSLCommerz',
+    ],
+
+    features: [
+      'Gear Browsing with Filters',
+      'Gear Details & Booking',
+      'Rental Orders',
+      'Online Payments (Stripe & SSLCommerz)',
+      'Reviews & Ratings',
+      'Provider Gear Management',
+      'Admin Moderation & Categories',
+      'Role-based Dashboards',
+      'Google Sign-in',
+      'Profile & Theme Settings',
+    ],
+
+    challenges: [
+      'Building three role-based dashboards in one app',
+      'Integrating two payment gateways with success and cancel flows',
+      'Handling JWT access and refresh token authentication',
+      'Fixing login, registration and password-reset flow bugs across frontend and backend',
+    ],
+
+    futureImprovements: [
+      'Real-time availability calendar',
+      'Chat between customer and provider',
+      'Gear damage and deposit management',
+      'Mobile application',
+    ],
+
+    problemStatement:
+      'People need gear only occasionally, and owners have no simple, trusted way to rent it out.',
+
+    businessGoal:
+      'Build a rental marketplace that connects gear owners with renters and handles orders, payments and reviews.',
+
+    architectureDiagram:
+      'Next.js (App Router) → REST API → Database (+ Stripe, SSLCommerz, Google OAuth)',
+
+    coreFeatures: ['Authentication', 'Gear Listings', 'Rentals', 'Payments', 'Reviews', 'Admin Panel'],
+
+    lessonsLearned: [
+      'Role-based routing and dashboards',
+      'Integrating multiple payment gateways',
+      'JWT refresh token flow',
+      'Structuring a large App Router project',
+    ],
+
+    liveUrl: 'https://b-assignment-5-client.vercel.app',
+
+    githubUrl: 'https://github.com/Alaminahmedariyan/b-assignment-5-client',
+  },
+
+  // ───────────────────────── 4. SAS MARKETING SOLUTIONS ─────────────────────────
+  {
+    slug: 'sas-marketing-solutions',
+
+    title: 'SAS Marketing Solutions',
+
+    subtitle: 'Marketing Agency Website',
+
+    category: 'Business Website',
+
+    description:
+      'A modern, responsive marketing agency website built with Next.js, focused on presenting services and generating client enquiries.',
+
+    longDescription:
+      'SAS Marketing Solutions is a responsive business website built with Next.js, React, TypeScript, Tailwind CSS and shadcn/ui. It presents the agency, its services and its work in a clean, fast-loading interface designed to turn visitors into enquiries.',
+
+    purpose:
+      'Give a marketing agency a professional online presence that builds trust and brings in client enquiries.',
+
+    problemsSolved: [
+      {
+        problem: 'Small agencies lose clients without a credible online presence.',
+        solution: 'A clean, fast and fully responsive website that presents services clearly.',
+      },
+      {
+        problem: 'Visitors leave if the site is slow or hard to use on mobile.',
+        solution: 'Next.js App Router and Tailwind CSS give fast loads and a mobile-first layout.',
+      },
+    ],
+
+    highlights: [
+      'Built with Next.js, React and TypeScript',
+      'Responsive design with Tailwind CSS and shadcn/ui',
+      'Deployed on Vercel',
+    ],
+
+    role: 'Full Stack Developer',
+
+    duration: '2 Weeks',
+
+    team: 'Solo',
+
+    status: 'Completed',
+
+    featured: false,
+
+    thumbnail: '/images/projects/sas1.png',
+
+    gallery: [
+      '/images/projects/sas2.png',
+      '/images/projects/sas3.png',
+    ],
+
+    techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui'],
+
+    features: [
+      'Responsive Layout',
+      'Services Showcase',
+      'Contact / Enquiry Section',
+      'SEO Friendly Pages',
+    ],
+
+    challenges: [
+      'Designing a clean layout that works from mobile to desktop',
+      'Keeping pages fast with the Next.js App Router',
+    ],
+
+    futureImprovements: [
+      'Blog and case studies',
+      'CMS integration',
+      'Analytics and lead tracking',
+    ],
+
+    problemStatement:
+      'Marketing businesses need a credible, fast website to win clients online.',
+
+    businessGoal:
+      'Deliver a professional website that presents the agency well and drives enquiries.',
+
+    architectureDiagram: 'Next.js (App Router) → Tailwind CSS + shadcn/ui → Vercel',
+
+    coreFeatures: ['Landing Page', 'Services', 'Contact', 'Responsive UI'],
+
+    lessonsLearned: [
+      'Building clean marketing layouts with Tailwind CSS 4',
+      'Deploying and tuning a Next.js site on Vercel',
+    ],
+
+    liveUrl: 'https://sas-marketing-solutions.vercel.app',
+
+    githubUrl: 'https://github.com/yourrepo',
+  },
 ];

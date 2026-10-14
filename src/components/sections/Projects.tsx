@@ -1,21 +1,22 @@
-'use client';
-
-import Link from 'next/link';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight, Github } from 'lucide-react';
 
-import { projectsList } from '@/config/portfolio-data';
 import { Container } from '@/components/shared/Container';
-import { SectionTitle } from '../ui/section-title';
+import { FadeIn } from '@/components/shared/FadeIn';
+import { SectionTitle } from '@/components/ui/section-title';
+import { Card } from '@/components/ui/Card';
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
+import { projectsList } from '@/config/portfolio-data';
+import { cn } from '@/lib/utils';
 
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
+/* "your-demo.com" / "yourrepo" placeholder link-er button dekhabe na */
+const realUrl = (url?: string) => (url && !/your-demo|yourrepo/.test(url) ? url : undefined);
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 md:py-32">
+    <section id="projects" className="sec-6 relative py-24 md:py-28">
       <Container>
         <SectionTitle
           badge="Projects"
@@ -23,110 +24,90 @@ export function Projects() {
           description="Some of my recent work and real-world applications."
         />
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={fadeIn}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {projectsList.map((project) => (
-              <motion.div
-                key={project.slug}
-                whileHover={{ y: -8 }}
-                transition={{ duration: 0.3 }}
-                className="group relative h-[540px] overflow-hidden rounded-3xl border bg-card shadow-lg"
-              >
-                {/* Background Image */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {projectsList.map((project, index) => {
+            const live = realUrl(project.liveUrl);
+            const repo = realUrl(project.githubUrl);
+            const techs = project.techStack ?? [];
+            const extra = techs.length - 4;
 
-                <Image
-                  src={project.thumbnail || '/placeholder.jpg'}
-                  alt={project.title}
-                  fill
-                  priority={project.featured}
-                  sizes="(max-width:768px) 100vw, 50vw"
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                />
-
-                {/* Dark Overlay */}
-
-                <div className="absolute inset-0 bg-black/25" />
-
-                {/* Bottom Gradient */}
-
-                <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-black via-black/80 to-transparent" />
-
-                {/* Featured */}
-
-                {project.featured && (
-                  <span className="absolute left-5 top-5 z-20 rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur-md">
-                    Featured
-                  </span>
-                )}
-
-                {/* Content */}
-
-                <div className="absolute bottom-0 z-20 w-full p-6 text-white">
-                  <h3 className="text-3xl font-bold">
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-3 line-clamp-2 text-white/80">
-                    {project.description}
-                  </p>
-
-                  {/* Tech */}
-
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {project.techStack?.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs backdrop-blur-md"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+            return (
+              <FadeIn key={project.slug} delay={(index % 2) * 0.1} className="h-full">
+                <Card variant="media" className="h-full">
+                  {/* TOP HALF: photo */}
+                  <div className="card-media__img">
+                    <Image
+                      src={project.thumbnail || '/placeholder.jpg'}
+                      alt={project.title}
+                      fill
+                      priority={project.featured}
+                      sizes="(max-width:768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
+                    {project.featured && <span className="card-media__tag">Featured</span>}
                   </div>
 
-                  {/* Buttons */}
+                  {/* BOTTOM HALF: text */}
+                  <div className="card-media__body">
+                    <p className="section-label">{project.category}</p>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-xl bg-white px-5 py-2 font-semibold text-black transition hover:scale-105"
+                    <h3 className="font-heading mt-2 text-2xl font-extrabold tracking-tight">
+                      {project.title}
+                    </h3>
+
+                    <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {techs.slice(0, 4).map((tech) => (
+                        <Badge key={tech} variant="secondary">
+                          {tech}
+                        </Badge>
+                      ))}
+                      {extra > 0 && <Badge variant="secondary">+{extra}</Badge>}
+                    </div>
+
+                    <div className="mt-auto flex flex-wrap items-center gap-3 pt-6">
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        className={cn(buttonVariants({ size: 'sm' }))}
                       >
-                        Live Demo
-                      </a>
-                    )}
+                        View Details
+                        <ArrowUpRight />
+                      </Link>
 
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="rounded-xl border border-white/40 bg-white/10 px-5 py-2 font-semibold text-white backdrop-blur-md transition hover:bg-white/20"
-                      >
-                        GitHub
-                      </a>
-                    )}
+                      {live && (
+                        <a
+                          href={live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}
+                        >
+                          Live Demo
+                        </a>
+                      )}
 
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="rounded-xl border border-white/40 bg-white/10 px-5 py-2 font-semibold text-white backdrop-blur-md transition hover:bg-white hover:text-black"
-                    >
-                      View Details →
-                    </Link>
+                      {repo && (
+                        <a
+                          href={repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="GitHub repository"
+                          className={cn(buttonVariants({ variant: 'outline', size: 'icon-sm' }))}
+                        >
+                          <Github />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </Card>
+              </FadeIn>
+            );
+          })}
+        </div>
       </Container>
+      <div className="sec-line" />
     </section>
   );
 }

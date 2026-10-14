@@ -2,30 +2,38 @@ import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
-const cardVariants = cva(
-  'rounded-xl border text-card-foreground shadow-xs transition-all duration-300',
-  {
-    variants: {
-      variant: {
-        default: 'border-border bg-card p-6',
-        interactive:
-          'border-border bg-card p-6 hover:scale-[1.01] hover:shadow-md hover:border-muted-foreground/30 hover:bg-muted/10',
-        glass:
-          'border-border/40 bg-card/60 p-6 backdrop-blur-md hover:border-border/80 hover:bg-card/85',
-      },
+export const cardVariants = cva('card-base', {
+  variants: {
+    variant: {
+      default: 'p-[var(--card-pad)]',
+      panel: 'skill-panel',
+      media: 'card-media',
+      /* purano naam: shob default-er moto, ager JSX bhangbe na */
+      spotlight: 'p-[var(--card-pad)]',
+      interactive: 'p-[var(--card-pad)]',
+      edge: 'p-[var(--card-pad)]',
+      shimmer: 'p-[var(--card-pad)]',
+      slide: 'p-[var(--card-pad)]',
+      corner: 'p-[var(--card-pad)]',
+      glass: 'p-[var(--card-pad)]',
     },
-    defaultVariants: {
-      variant: 'default',
+    interactive: {
+      true: 'card-fx',
+      false: '',
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+    interactive: true,
+  },
+});
 
 interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof cardVariants> {}
 
-export function Card({ className, variant, ...props }: CardProps) {
-  return <div className={cn(cardVariants({ variant, className }))} {...props} />;
+export function Card({ className, variant, interactive, ...props }: CardProps) {
+  return <div className={cn(cardVariants({ variant, interactive }), className)} {...props} />;
 }
 
 interface SubComponentProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -79,4 +87,3 @@ export function CardFooter({ className, children, ...props }: SubComponentProps)
     </div>
   );
 }
-

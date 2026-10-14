@@ -34,6 +34,13 @@ export interface Project {
 
   /* ===== NEW ===== */
 
+  purpose?: string;
+  problemsSolved?: {
+    problem: string;
+    solution: string;
+  }[];
+  highlights?: string[];
+
   overview?: string;
 
   problem?: string;
@@ -70,7 +77,6 @@ export interface Project {
 export interface Skill {
   readonly name: string;
   readonly iconName: string;
-  readonly percentage: number;
   readonly category: 'Frontend' | 'Backend' | 'Database' | 'AI' | 'DevOps';
 }
 
