@@ -1,437 +1,180 @@
 <div align="center">
 
-# 🚀 Alamin Ahmed
+# Alamin Ahmed
 
-### Full Stack Developer • AI Automation Engineer
+### Full Stack Developer · AI Automation Engineer
 
-Building scalable, high-performance and modern web applications with Next.js, TypeScript, Prisma and AI.
+Building scalable, high-performance web applications with Next.js, TypeScript, Prisma and AI.
 
-<br/>
+<br />
 
-![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
-![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+[![Live Portfolio](https://img.shields.io/badge/Live_Portfolio-Visit_Site-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Alaminahmedariyan-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Alaminahmedariyan)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Alamin_Ahmed-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alamin-ahmed-536463382)
 
-### 🌐 Live Demo
-
-**👉 https://YOUR-DOMAIN.vercel.app**
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=flat-square&logo=nextdotjs)
+![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=000)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=fff)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=fff)
+![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 </div>
 
 ---
 
-# 📖 About
+## 📖 About
 
-This repository contains the source code for my professional Full Stack Developer Portfolio.
+The source code of my personal developer portfolio. It showcases my featured projects, technical skills and experience, with a focus on clean design, performance and a polished user experience — a single place for recruiters, clients and collaborators to get to know my work.
 
-The portfolio showcases my featured projects, technical skills, experience, and modern web development practices using the latest technologies.
-
-Designed with a premium UI, optimized performance, responsive layouts, and clean architecture, this portfolio represents my development journey and serves as a central place for recruiters, clients, and collaborators.
+**👉 Live site:** https://my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app
 
 ---
 
-# ✨ Features
+## 🖼️ Screenshots
 
-- 🚀 Next.js 16 App Router
-- ⚡ React 19
-- 💙 TypeScript
-- 🎨 Tailwind CSS v4
-- 🌙 Dark / Light Mode
-- 📱 Fully Responsive
-- 🪄 Premium UI/UX
-- 🔥 Glassmorphism Design
-- 🎭 Smooth Animations
-- 📂 Dynamic Project Pages
-- 📧 Contact Form
-- 📈 SEO Optimized
-- 🤖 Metadata API
-- 🗺 Sitemap
-- 🤖 Robots.txt
-- 📲 PWA Manifest
-- ⚡ Fast Loading
-- 🖼 Optimized Images
-- ♿ Accessibility Friendly
-- 🚀 Production Ready
+<!-- Add screenshots to public/images/preview and update the paths below -->
+
+| Home | Projects |
+|---|---|
+| ![Home](public/images/preview/home.png) | ![Projects](public/images/preview/projects.png) |
+
+| Project details | Contact |
+|---|---|
+| ![Details](public/images/preview/project-details.png) | ![Contact](public/images/preview/contact.png) |
 
 ---
 
-# 🛠 Tech Stack
+## ✨ Features
 
-## Frontend
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS v4
-- Framer Motion
-- Lucide React
-
-## Backend
-
-- Next.js Route Handlers
-- Server Actions
-
-## Database
-
-- PostgreSQL
-- Prisma ORM
-
-## Email
-
-- Resend
-
-## Deployment
-
-- Vercel
+- **Modern stack** — Next.js 16 App Router, React 19, TypeScript, Tailwind CSS v4
+- **Premium UI** — glassmorphism design with smooth animations (Framer Motion)
+- **Dark / light mode** and fully responsive layouts
+- **Dynamic project pages** for every featured project
+- **Working contact form** delivering email through Resend
+- **SEO ready** — Metadata API, Open Graph, Twitter cards, sitemap, robots.txt, canonical URLs
+- **PWA manifest** and optimized images
+- **Accessibility-friendly** markup
 
 ---
 
-# 📂 Project Structure
+## 🧰 Tech Stack
 
-```text
-src
-│
-├── app
-│   ├── api
-│   ├── projects
-│   └── layout.tsx
-│
-├── components
-│
-├── data
-│
-├── hooks
-│
-├── lib
-│
-├── providers
-│
-├── styles
-│
-├── types
-│
-└── utils
+| Layer | Technologies |
+|---|---|
+| **Frontend** | Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion · Lucide React |
+| **Backend** | Next.js Route Handlers · Server Actions |
+| **Email** | Resend |
+| **Deployment** | Vercel |
 
-public
-│
-├── images
-├── icons
-└── favicon
+---
+
+## 🚀 Featured Projects
+
+| Project | Description | Tech |
+|---|---|---|
+| 🚀 **Launch Hunt** | Premium product launch platform inspired by Product Hunt | Next.js · TypeScript · Prisma · PostgreSQL · Tailwind CSS |
+| 🤖 **LeadPulse** | AI-powered lead generation & sales automation platform | Next.js · LangChain · OpenAI · n8n · Prisma |
+| 📄 **ResuAI** | AI resume builder & ATS resume optimizer | Next.js · TypeScript · OpenAI · Prisma |
+| 🌱 **EcoSpark Hub** | Community sustainability platform | React · Express · MongoDB |
+| 📚 **RateMyTutor** | Tutor review & booking platform | Next.js · Prisma · PostgreSQL |
+| 💳 **InvoiceSync** | Invoice management SaaS | Next.js · Prisma · PostgreSQL |
+
+---
+
+## 🏗️ Architecture
+
+```mermaid
+flowchart LR
+    B[Browser] --> N[Next.js App Router]
+    N --> SC[Server Components]
+    SC --> API[Route Handlers / Server Actions]
+    API --> R[Resend API]
 ```
 
 ---
 
-# 🏗 Architecture
+## 📂 Project Structure
 
-```text
-Browser
+```
+src/
+├── app/            # App Router (layout, api, projects)
+├── components/     # UI components
+├── data/           # Project & skills data
+├── hooks/          # Custom hooks
+├── lib/            # Helpers & clients
+├── providers/      # Context providers (theme, etc.)
+├── styles/         # Global styles
+├── types/          # TypeScript types
+└── utils/          # Utilities
 
-↓
-
-Next.js App Router
-
-↓
-
-Server Components
-
-↓
-
-API Routes
-
-↓
-
-Prisma ORM
-
-↓
-
-PostgreSQL
-
-↓
-
-Resend API
+public/
+├── images/
+├── icons/
+└── favicon/
 ```
 
 ---
 
-# 🚀 Featured Projects
-
-## 🚀 Launch Hunt
-
-Premium Product Launch Platform inspired by Product Hunt.
-
-**Tech**
-
-- Next.js
-- TypeScript
-- Prisma
-- PostgreSQL
-- Tailwind CSS
-
----
-
-## 🤖 LeadPulse
-
-AI-powered Lead Generation & Sales Automation Platform.
-
-**Tech**
-
-- Next.js
-- LangChain
-- OpenAI
-- n8n
-- Prisma
-
----
-
-## 📄 ResuAI
-
-AI Resume Builder & ATS Resume Optimizer.
-
-**Tech**
-
-- Next.js
-- TypeScript
-- OpenAI
-- Prisma
-
----
-
-## 🌱 EcoSpark Hub
-
-Community Sustainability Platform.
-
-**Tech**
-
-- React
-- Express
-- MongoDB
-
----
-
-## 📚 RateMyTutor
-
-Tutor Review & Booking Platform.
-
-**Tech**
-
-- Next.js
-- Prisma
-- PostgreSQL
-
----
-
-## 💳 InvoiceSync
-
-Invoice Management SaaS.
-
-**Tech**
-
-- Next.js
-- Prisma
-- PostgreSQL
-
----
-
-# 📊 Performance
-
-✅ Optimized Bundle
-
-✅ Static Generation
-
-✅ Dynamic Routing
-
-✅ Lazy Loading
-
-✅ Metadata API
-
-✅ Image Optimization
-
-✅ Code Splitting
-
-✅ Responsive Design
-
----
-
-# 🔍 SEO
-
-- Sitemap
-- Robots.txt
-- Open Graph
-- Twitter Cards
-- Metadata API
-- Canonical URLs
-- Structured Metadata
-
----
-
-# 🔐 Security
-
-- Environment Variables
-- Server Actions
-- Input Validation
-- Type-safe APIs
-
----
-
-# ⚙ Environment Variables
-
-Create a `.env` file.
-
-```env
-RESEND_API_KEY=YOUR_KEY
-CONTACT_EMAIL=YOUR_EMAIL
-```
-
----
-
-# 📦 Installation
-
-Clone repository
+## 🏁 Getting Started
 
 ```bash
+# 1. Clone
 git clone https://github.com/YOUR_USERNAME/full-stack-portfolio.git
-```
+cd full-stack-portfolio
 
-Install dependencies
-
-```bash
+# 2. Install
 npm install
-```
 
-Run development server
+# 3. Configure environment (see below)
 
-```bash
+# 4. Run
 npm run dev
 ```
 
-Build
+Open [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm run build
-```
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm start` | Start the production server |
 
-Start production
+### Environment variables
 
-```bash
-npm start
-```
+Create a `.env` file in the project root:
 
----
-
-# 🌐 Deployment
-
-The project is fully optimized for deployment on **Vercel**.
-
-```bash
-npm run build
-```
-
-Deploy.
-
----
-
-# 🎯 Lighthouse Goals
-
-| Metric | Score |
-|----------|-------|
-| Performance | 100 |
-| Accessibility | 100 |
-| Best Practices | 100 |
-| SEO | 100 |
-
----
-
-# 📸 Screenshots
-
-> Add screenshots later.
-
-```
-public/images/preview/home.png
-
-public/images/preview/projects.png
-
-public/images/preview/project-details.png
-
-public/images/preview/contact.png
+```env
+RESEND_API_KEY=your_resend_api_key
+CONTACT_EMAIL=your_email@example.com
 ```
 
 ---
 
-# 🛣 Roadmap
+## ☁️ Deployment
 
-- ✅ Portfolio
-- ✅ Projects
-- ✅ Contact
-- ✅ Dark Mode
-- ✅ SEO
-- ⏳ Blog
-- ⏳ CMS
-- ⏳ Dashboard
-- ⏳ Analytics
+Deployed on **Vercel**: import the repository, add the environment variables above, and deploy.
 
 ---
 
-# 👨‍💻 About Me
+## 📬 Contact
 
-I'm **Alamin Ahmed**, a Full Stack Developer passionate about building scalable, production-ready web applications.
-
-I enjoy working with:
-
-- Next.js
-- TypeScript
-- React
-- Prisma
-- PostgreSQL
-- AI Automation
-- OpenAI APIs
-- Modern UI/UX
+| | |
+|---|---|
+| 🌐 Portfolio | [my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app](https://my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app) |
+| 💻 GitHub | [@Alaminahmedariyan](https://github.com/Alaminahmedariyan) |
+| 💼 LinkedIn | [Alamin Ahmed](https://www.linkedin.com/in/alamin-ahmed-536463382) |
+| ✉️ Email | alaminahmedariyan2022@gmail.com |
 
 ---
 
-# 🤝 Connect With Me
+## 📄 License
 
-### 🌐 Portfolio
-
-https://my-portfolio-alpha-orcin-4xkhsnjiby.vercel.app/#hero
-
-### GitHub
-
-https://github.com/Alaminahmedariyan
-
-### LinkedIn
-
-https://www.linkedin.com/in/alamin-ahmed-536463382
-
-### Email
-
-alaminahmedariyan2022@gmail.com
-
----
-
-# ⭐ Support
-
-If you like this project, please consider giving it a ⭐ on GitHub.
-
-It helps others discover the project and motivates further improvements.
-
----
-
-# 📄 License
-
-This project is licensed under the MIT License.
-
----
+Distributed under the **MIT License**.
 
 <div align="center">
 
-## 🚀 Built with Next.js 16 + React 19 + TypeScript + Tailwind CSS
+<br />
 
 Made with ❤️ by **Alamin Ahmed**
-
-⭐ Thank you for visiting this repository.
 
 </div>
